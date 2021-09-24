@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core\form;
+namespace callmeliow\phpmvc\form;
 
-use app\core\Model;
+use callmeliow\phpmvc\Model;
 
 class Form
 {

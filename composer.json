@@ -6,5 +6,10 @@
             "email": "zhdeveloper0605@gmail.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "callmeliow\\phpmvc": "."
+        }
+    },
     "require": {}
 }

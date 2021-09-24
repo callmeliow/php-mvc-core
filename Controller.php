@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core;
+namespace callmeliow\phpmvc;
 
-use app\core\middlewares\BaseMiddleware;
+use callmeliow\phpmvc\middlewares\BaseMiddleware;
 
 class Controller
 {
@@ -12,7 +12,7 @@ class Controller
     public string $action = '';
 
     /**
-     * @var \app\core\middlewares\BaseMiddleware[]
+     * @var \callmeliow\phpmvc\middlewares\BaseMiddleware[]
      */
     protected array $middlewares = [];
 

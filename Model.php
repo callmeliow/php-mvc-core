@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace callmeliow\phpmvc;
 
 abstract class Model
 {
@@ -29,7 +29,7 @@ abstract class Model
         foreach ($this->rules() as $attribute => $rules) {
             $value = $this->{$attribute};
 
-            if(!empty($validateOnly) && !in_array($attribute, $validateOnly)){
+            if (!empty($validateOnly) && !in_array($attribute, $validateOnly)) {
                 continue;
             }
 
@@ -55,7 +55,7 @@ abstract class Model
                 if ($ruleName === self::RULE_MATCH && $value !== $this->{$rule['match']}) {
                     $this->addErrorForRule($attribute, self::RULE_MATCH);
                 }
-                if($ruleName === self::RULE_UNIQUE){
+                if ($ruleName === self::RULE_UNIQUE) {
                     $className = $rule['class'];
                     $uniqueAttribute = $rule['attribute'] ?? $attribute;
                     $tableName = $className::tableName();
@@ -65,7 +65,7 @@ abstract class Model
                     $stmt->execute();
                     $result = $stmt->fetchObject();
 
-                    if($result){
+                    if ($result) {
                         $this->addErrorForRule($attribute, self::RULE_UNIQUE, ['field' => $attribute]);
                     }
                 }

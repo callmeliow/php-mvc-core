@@ -1,12 +1,12 @@
 <?php
 
-namespace app\core;
+namespace callmeliow\phpmvc;
 
 /**
  * Class Router
  * 
  * @author Liow Zhi Hao <zhdeveloper0605@gmail.com>
- * @package app\core
+ * @package callmeliow\phpmvc
  */
 
 class Router
@@ -53,7 +53,7 @@ class Router
         }
 
         if (is_array($callback)) {
-            /** @var \app\core\Controller $controller */
+            /** @var \callmeliow\phpmvc\Controller $controller */
             $controller = new $callback[0]();
             $controller->action = $callback[1];
             Application::$app->controller = $callback[0] = $controller;

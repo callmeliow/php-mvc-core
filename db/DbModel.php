@@ -1,9 +1,9 @@
 <?php
 
-namespace app\core\db;
+namespace callmeliow\phpmvc\db;
 
-use app\core\Application;
-use app\core\Model;
+use callmeliow\phpmvc\Application;
+use callmeliow\phpmvc\Model;
 
 abstract class DbModel extends Model
 {

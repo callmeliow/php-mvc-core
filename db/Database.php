@@ -1,8 +1,8 @@
 <?php
 
-namespace app\core\db;
+namespace callmeliow\phpmvc\db;
 
-use app\core\Application;
+use callmeliow\phpmvc\Application;
 use PDO;
 
 class Database

@@ -1,10 +1,10 @@
 <?php
 
-namespace app\core\middlewares;
+namespace callmeliow\phpmvc\middlewares;
 
-use app\core\Application;
-use app\core\exception\ForbiddenException;
-use app\core\middlewares\BaseMiddleware;
+use callmeliow\phpmvc\Application;
+use callmeliow\phpmvc\exception\ForbiddenException;
+use callmeliow\phpmvc\middlewares\BaseMiddleware;
 
 class AuthMiddleware extends BaseMiddleware
 {

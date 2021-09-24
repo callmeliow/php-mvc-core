@@ -1,8 +1,9 @@
 <?php
 
-namespace app\core;
+namespace callmeliow\phpmvc;
 
-class Session{
+class Session
+{
     protected const FLASH_KEY = 'flash_message';
 
     public function __construct()
@@ -52,7 +53,7 @@ class Session{
 
         // Iterate over marked to be removed
         foreach ($flashMessages as $key => &$flashMessage) {
-            if($flashMessage['remove']){
+            if ($flashMessage['remove']) {
                 unset($flashMessages[$key]);
             }
         }

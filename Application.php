@@ -1,16 +1,16 @@
 <?php
 
-namespace app\core;
+namespace callmeliow\phpmvc;
 
-use app\core\db\Database;
-use app\core\db\DbModel;
+use callmeliow\phpmvc\db\Database;
+use callmeliow\phpmvc\db\DbModel;
 use Exception;
 
 /**
  * Class Appication
  * 
  * @author Liow Zhi Hao <zhdeveloper0605@gmail.com>
- * @package app\core
+ * @package callmeliow\phpmvc
  */
 
 class Application
