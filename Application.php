@@ -15,6 +15,9 @@ use Exception;
 
 class Application
 {
+    public const EVENT_BEFORE_REQUEST = 'beforeRequest';
+    public const EVENT_AFTER_REQUEST = 'afterRequest';
+
     public static string $ROOT_PATH;
 
     public Router $router;
@@ -28,6 +31,7 @@ class Application
     public static Application $app;
 
     public string $userClass;
+    protected array $eventListeners = [];
 
     public function __construct($rootPath, array $config)
     {
@@ -77,5 +81,19 @@ class Application
     {
         $this->user = null;
         $this->session->remove('user');
+    }
+
+    public function on($eventName, $callback)
+    {
+        $this->eventListeners[$eventName][] = $callback;
+    }
+
+    public function triggerEvent($eventName)
+    {
+        $callbacks = $this->eventListeners[$eventName] ?? [];
+
+        foreach ($callbacks as $callback) {
+            call_user_func($callback);
+        }
     }
 }
